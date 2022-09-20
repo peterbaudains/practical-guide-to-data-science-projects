@@ -99,14 +99,14 @@ jupyter lab
 
 Some practical tips: 
 
-2.1. Separate data from code
-2.2. Separate raw data from processed data
-2.3. Retain code for converting raw data to processed data
-2.4. Build and think in terms of pipelines
-2.5. Modularise and test your code
-2.6. Version control your code
-2.7. Document your code dependencies
-2.8. Tools for replicating research environments
+1. Separate data from code
+2. Separate raw data from processed data
+3. Retain code for converting raw data to processed data
+4. Build and think in terms of pipelines
+5. Modularise and test your code
+6. Version control your code
+7. Document your code dependencies
+8. Tools for replicating research environments
 
 ---
 
