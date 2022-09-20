@@ -14,9 +14,11 @@ style: |
 
 # **A practical guide to data science projects**
 
-Peter Baudains
+Peter Baudains 
 
 [CDRC](https://cdrc.ac.uk) Research Data Scientist
+
+p.baudains@leeds.ac.uk
 
 ---
 ## Contents
