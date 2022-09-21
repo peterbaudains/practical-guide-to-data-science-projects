@@ -18,14 +18,16 @@ Peter Baudains
 
 [CDRC](https://cdrc.ac.uk) Research Data Scientist
 
-p.baudains@leeds.ac.uk
+e: p.baudains@leeds.ac.uk
+
+![](images/GitHub-Mark-32px.png) https://github.com/peterbaudains
 
 ---
 ## Contents
 
 1. Introduction 
 2. Reproducibility: Data, Code, and Environments
-3. (Handling threats to) Openness: Data Security and Maintaining IP 
+3. (Handling threats to) Openness: Data Security and DOIs 
 4. Delivering impact: Developing and publishing data products
 5. [CDRC Data Store](https://data.cdrc.ac.uk) 
 6. [CDRC Apps](https://apps.cdrc.ac.uk)
@@ -47,7 +49,7 @@ Anyone with access to your data and code (which should be as many people as poss
 ### 1.2 Open/Transparent
 The legal and ethical requirements for data security notwithstanding, every effort should be made to ensure openness and transparency in how a particular result or finding has been produced. 
 
-Two challenges to openness are ensuring any data security requirements and maintaining intellectual property of the resulting work.
+Two challenges to openness are in ensuring any data security requirements and in protecting your work and ideas from theft.
 
 ---
 ### 1.3 Impactful
@@ -55,7 +57,7 @@ The tagline to the Data Science Development Programme is:
 
 *"Data Science for Public Good"*
 
-Data Science is increasingly being used to provide insights and make decisions in different domains. Every project on this year's programme has the ability have a meaningful impact. 
+Data Science is increasingly used to provide insights and make decisions in different domains. Every project on this year's programme has the ability have a meaningful impact. 
 
 It's well worth identifying the kinds of impact that might be made early on in the project.
 
@@ -75,7 +77,7 @@ Also, apologies to those for which the content in this session may seem obvious.
 
 Some of the code snippets used in this presentation are intended to be run on a command line interface to the machine you are using (e.g. cmd in Windows, Terminal on Linux/Mac). 
 
-Being comfortable using some command line tools is a really valuable skill. There's plenty of free online resources available for learning the basics:
+Being comfortable using some command line tools is a really handy skill. There's plenty of free online resources available for learning the basics:
 
 1. https://ubuntu.com/tutorials/command-line-for-beginners
 2. https://www.freecodecamp.org/news/command-line-for-beginners/
@@ -98,17 +100,16 @@ jupyter lab
 ---
 
 ### Q. How to approach this with reproducibility in mind?
-
-Some practical tips: 
-
 1. Separate data from code
 2. Separate raw data from processed data
-3. Retain code for converting raw data to processed data
+3. Retain all code for converting raw data to processed data
 4. Build and think in terms of pipelines
 5. Modularise and test your code
 6. Version control your code
-7. Document your code dependencies
-8. Tools for replicating research environments
+7. Version control your data
+8. Have a Research Data Management Plan
+8. Document your code dependencies
+9. Use tools for replicating research environments
 
 ---
 
@@ -261,27 +262,25 @@ Docker
 
 ---
 
-### 2.11 Exercise: Create a template data science project directory
+### 2.11 Example: Create a template data science project directory
 
 
 
 
 ---
 
-## 3. (Handling threats to) Openness: Data security and maintaining IP
+## 3. (Handling threats to) Openness: Data security and DOIs
 
 Data relating to individuals is likely to be subject to data protection legislation which forces anyone that controls or processes the data to take necessary steps to protect it.
 
 Data may also require protection due to commercial sensitivity or other licensing arrangement.
 
-Theft of intellectual property is another barrier to openness. 
-
-This section discusses how to tackle some of these.
+The risk of theft of your research ideas (i.e. someone falsely claiming credit for them) is another barrier to openness that can be mitigated by assigning research outputs a digital object identifier. 
 
 ---
 ### 3.1 Data Licensing and Access Tiers
 
-The Consumer Data Research Centre here at Leeds and other organisations such as the UK Data Service use a three-levelled approach for defining data access tiers relating to the potential sensitivity data: 
+The Consumer Data Research Centre here at Leeds and other organisations, such as the UK Data Service, use a three-levelled approach for defining data access tiers relating to the potential sensitivity data: 
 
 1. Open Data
 2. Safeguarded Data
@@ -319,78 +318,128 @@ At the University of Leeds, controlled/secure datasets can only be access via th
 
 The data license may also stipulate that access to the data can only be granted via a physical safe room, providing further assurance against the risk of any data breach.
 
-
 ---
 
 ### 3.2 Meeting FAIR principles for non-open data
 
+FAIR stands for:
 
+- Findability
+- Accessibility
+- Interoperability
+- Reusability
 
+_"Making data ‘FAIR’ is not the same as making it ‘open’. Accessible means that there is a procedure in place to access the data. Data should be as open as possible, and as closed as necessary."_ - The Turing Way Community (2022)
 
 ---
 
 ### 3.3 Creating a DOI for a GitHub repository
 
+Giving your code, data or research outputs a Digital Object Identifier (DOI) gives them a permanent place in the scholarly record and can be used in the (unlikely) event of any claims over discoveries. 
 
+[Zenodo](https://zenodo.org/) is a DOI issuing service that can be used with code releases on GitHub repositories. A _release_ is a permanent snapshot of your codebase in its exact state at the time of release.
 
-
----
-
-# 4. Delivering impact: Developing and publishing data products
-
+Instructions for issuing a DOI via Zenodo can be found [here](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content).
 
 ---
 
-### 4.1 What is a data product?
+## 4. Delivering impact: Developing and publishing data products
 
+_What is a data product?_
 
+A data product is a product whose primary objective is to use data to facilitate an end goal ([O’Regan, 2018](https://towardsdatascience.com/designing-data-products-b6b93edf3d23)).
 
----
-
-### 4.2 Product lifecycle 
-
-Also known as the software development lifecycle.
-
----
-
-#### 4.2.1 Analysis & Design
-
-Audience, data, algorithms, design
+![](images/data-products-spectrum.png)
+A data product can be an effective way to deliver impact from your project!
 
 ---
 
-#### 4.2.2 Development & Testing
+### 4.1 Data Product Examples from the CDRC
 
-Web frameworks such as RShiny/Plotly-Dash, etc.
+Priority Places: https://priorityplaces.cdrc.ac.uk
 
+Nutrient Profile Model Calculator: https://npmcalculator.cdrc.ac.uk 
+
+Planet Plates: https://planetplates.cdrc.ac.uk
+
+---
+### 4.2 A product mindset for data product development
+
+Product development is fundamentally different to undertaking a research project and requires a different mindset. A research project is concerned with answering a particular research question such as _is there an association between these variables_ or _with what accuracy can I predict a certain outcome_? 
+
+A product mindset involves solving a __specific problem__ for a __specific audience__. 
+
+There are various tools and frameworks for thinking with a product mindset. One of the most helpful is likely the __Software Development Lifecycle (SDLC)__ (often used interchangeably with the term _Systems Development Lifecycle_).
 
 ---
 
-#### 4.2.3 Deployment and Maintenance
+### 4.3 Software Development Lifecycle (SDLC)
 
-Dockerized applications
+The SDLC is typically represented by a number of distinct phases, all of which need to be considered during product development. We'll review the following in the context of developing data products:
 
-Github actions for automated deployment
-
-The CDRC has a cloud-based web-app hosting capability which can be made available for you to host your data products.
-
-Free hosting is also available from a variety of services.
+1. Analysis & Design
+2. Development & Testing
+3. Deployment & Maintenance
 
 ---
 
-### 4.3 The Agile Manifesto
- 
-The SDLC as I've just presented appears extremely linear (also known as *waterfall*). In real life development and data science projects, it's extremely rare to follow such a linear process. 
+#### 4.3.1 Analysis & Design - Audience
 
-*Requirements typically change as the project evolves.*
-
-The Agile Manifesto was written by a group of software engineers in the early 2000s and has had a massive impact on how software engineering is done in industry.
+- Who is the product for? 
+- How data literate are they? 
+- What assumptions and limitations need to be clearly communicated?
+- How broad/narrow should the audience's interpretation be?
+- How will the product fit within their workflow? 
+- What actions will they take on the basis of the information presented?
+- What is the user journey?
 
 ---
 
-### 4.4 
+#### 4.3.2 Analysis & Design - Data & Algorithms
 
+- What data will be used? 
+- What are its limitations?
+- How big is the data?
+- How will the impact from the data be measured? What metrics will be used?
+- Does the data license permit this use?
 
+---
+
+#### 4.3.3 Analysis & Design - UI & Architecture
+
+- How will the data be visualised or presented?
+- What is the data flow of the application?
+- Where are the likely bottlenecks?
+- Where can the user go wrong?
+- How much freedom does the user have?
+
+---
+
+#### 4.3.4 Analysis & Design - Security & Compliance
+
+Web app security is a massive topic. A good starting point for learning more is the [OWASP Top 10](https://owasp.org/www-project-top-ten/). 
+
+The risks of creating an insecure app can be minimised by using latest versions (and following corresponding tutorials) of web app frameworks such as [Shiny](https://shiny.rstudio.com/) in R or [Flask](https://flask.palletsprojects.com/en/2.2.x/), [Django](https://www.djangoproject.com/), or [Dash](https://plotly.com/dash/) in Python.
+
+An important thing to ensure when designing your data product is that it will not directly or indirectly cause data to be published online for which you do not have a license or which cannot be legally shared (e.g. because it contains personal data). 
+
+---
+
+#### 4.3.5 Development & Testing
+
+__Test-driven development__ is where the requirements for a piece of software is first translated into a series of tests before any development work is done. It provides a contract by which the developed software must pass before it is considered complete. 
+
+Although it may not always be appropriate for exploratory-style data science projects and the products that arise from such projects, it's useful to emphasise the importance of testing in the development process.
+
+A good overview of code testing is available in [The Turing Way Community (2022)](https://the-turing-way.netlify.app/reproducible-research/testing.html).
+
+---
+
+#### 4.3.6 Deployment & Maintenance
+
+Free hosting of your webapp is available from a variety of services (e.g. [Python Anywhere](https://www.pythonanywhere.com/), [shinyapps.io](https://www.shinyapps.io/)).
+
+The CDRC has a cloud-based web-app hosting capability which can be made available for you to host your data products. This uses [Docker](https://www.docker.com/) and [GitHub Actions](https://github.com/features/actions) to automate deployments on code changes. 
 
 ---
 
@@ -418,14 +467,15 @@ If you have an idea for a web-app that comes from your research then please get 
 
 ## 7. References and further reading
 
-git - the simple guide: https://rogerdudler.github.io/git-guide/
+[git - the simple guide](https://rogerdudler.github.io/git-guide/)
 
-https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content
+[Library resources on data management planning](https://library.leeds.ac.uk/info/14062/research_data_management/62/data_management_planning)
 
-https://agilemanifesto.org/
+[Vincent D. Warmerdam at PyData Eindhoven 2019 on Python/Pandas workflows](https://www.youtube.com/watch?v=yXGCKqo5cEY)
 
-https://the-turing-way.netlify.app/welcome.html
+---
 
-Vincent D. Warmerdam at PyData Eindhoven 2019 on Python/Pandas workflows: https://www.youtube.com/watch?v=yXGCKqo5cEY
+The Turing Way Community. (2022). The Turing Way: A handbook for reproducible, ethical and collaborative research (1.0.2). Zenodo. https://doi.org/10.5281/zenodo.6909298
 
 Wilkinson, M., Dumontier, M., Aalbersberg, I. et al. The FAIR Guiding Principles for scientific data management and stewardship. Sci Data 3, 160018 (2016). https://doi.org/10.1038/sdata.2016.18
+
