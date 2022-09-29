@@ -167,10 +167,7 @@ Remember that reproducibility means that if we start from the raw data using you
 ### 2.4 Build and think in terms of pipelines
 
 Your project code can usually be thought in terms of a pipeline or set of pipelines that take in some raw data and generate some processed data. 
-
-![](images/pipeline-model.png)
-
-<span style="font-size:50%">https://www.databricks.com/glossary/what-are-ml-pipelines</span>
+![width:1000px](images/ml_pipeline.png)
 
 ---
 
