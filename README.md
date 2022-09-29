@@ -18,7 +18,7 @@ Peter Baudains
 
 [CDRC](https://cdrc.ac.uk) Research Data Scientist
 
-e: p.baudains@leeds.ac.uk
+e: p[dot]baudains@leeds.ac.uk
 
 ![](images/GitHub-Mark-32px.png) https://github.com/peterbaudains
 
