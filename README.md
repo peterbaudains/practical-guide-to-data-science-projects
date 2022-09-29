@@ -65,11 +65,11 @@ It's well worth identifying the kinds of impact that might be made early on in t
 
 ### 1.4 Goal of the session
 
-The goal of this session is to introduce some surrounding tools and technology that will be helpful in your projects for achieving the three goals we have just covered. It's also to get you thinking about **how** you tackle your projects from a practical perspective.
+The goal of this session is to introduce some surrounding tools and technology that will be helpful in your projects for achieving these three goals. It's also to get you thinking about **how** you tackle your projects from a practical perspective.
 
 The majority of the examples in this session are based from my experience using Python, however, I think most of the content is transferable to any language. 
 
-Also, apologies to those for which the content in this session may seem obvious. Hopefully there will still be a few nuggets for you to take away. 
+Even if some of this might sound familiar to you, there will hopefully still be some useful nuggets to take away.
 
 ---
 
@@ -77,7 +77,7 @@ Also, apologies to those for which the content in this session may seem obvious.
 
 Some of the code snippets used in this presentation are intended to be run on a command line interface to the machine you are using (e.g. cmd in Windows, Terminal on Linux/Mac). 
 
-Being comfortable using some command line tools is a really handy skill. There's plenty of free online resources available for learning the basics:
+Being comfortable using some command line tools is a handy skill to have. There's plenty of free online resources available for learning the basics:
 
 1. https://ubuntu.com/tutorials/command-line-for-beginners
 2. https://www.freecodecamp.org/news/command-line-for-beginners/
@@ -207,7 +207,7 @@ git log
 
 A public GitHub repository is a great option for making your research openly available.
 
-A really handy guide for using Git (and GitHub as a remote server) is here: https://rogerdudler.github.io/git-guide/
+A handy guide for using Git (and GitHub as a remote server) is here: https://rogerdudler.github.io/git-guide/
 
 ---
 
@@ -256,16 +256,11 @@ will list all dependencies and versions of those dependencies. This can be used 
 
 ### 2.10 Tools for replicating research environments
 
-Conda 
-Binder
-Docker
+[Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html) is a tool for (re-)creating Python environments on your system using the same packages used to run your code.
 
----
+[Binder](https://mybinder.org) is a web service that can turn a GitHub repository containing Jupyter notebooks into an executable environment with the required dependencies. Think of it as online hosting for your jupyter notebooks.
 
-### 2.11 Example: Create a template data science project directory
-
-
-
+[Docker](https://docs.docker.com/get-started/) is a platform for creating isolated versions of the entire operating system needed to run your code in things called _containers_. It's the ultimate in portability and means that all your dependencies down to the operating system are defined in code. Sadly Docker doesn't play well without Admin rights on your machine.  
 
 ---
 
@@ -314,7 +309,7 @@ Safeguarded datasets are available via the CDRC and other data services subject 
 
 This is the highest tier within the CDRC Data Service and may contain data that risks disclosing individuals or which is considered to be highly commercially sensitive. 
 
-At the University of Leeds, controlled/secure datasets can only be access via the Leeds Analytic Secure Environment for Research (LASER), a secure research environment. 
+At the University of Leeds, controlled/secure datasets can only be accessed via the Leeds Analytic Secure Environment for Research (LASER), a secure research environment. 
 
 The data license may also stipulate that access to the data can only be granted via a physical safe room, providing further assurance against the risk of any data breach.
 
@@ -333,7 +328,26 @@ _"Making data ‘FAIR’ is not the same as making it ‘open’. Accessible mea
 
 ---
 
-### 3.3 Creating a DOI for a GitHub repository
+### 3.3 Working with secure data and [GitHub](https://github.com/)
+
+Code on GitHub is contained in repositories (or _repos_) that can be either private or public. A public repo can be a great way of making your research available to the wider public but you may prefer to start with a private repo which is visible only to you. 
+
+If you're working with secure or safeguarded data then you'll need to ensure that no data is accidentally published on GitHub. Note that even data printed as output to a notebook cell can contain sensitive data. Ensure you `Edit > clear all outputs` before pushing when working with Jupyter notebooks.
+
+Using a [.gitignore file](https://git-scm.com/docs/gitignore) is an easy way of ensuring that certain file types are not tracked by Git and are therefore not added to your online repo.
+
+---
+
+### 3.4 Other GitHub tips
+
+Your repository should include a file named [README.md](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes) in its main directory. This file is written in [Markdown](https://www.markdownguide.org/) and rendered on the GitHub landing page of your repository. It's used to include a description of your code.
+
+Your repository should also include a LICENSE file which includes details on how your code is permitted to be used by others. GitHub has a good explainer on [licenses](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
+
+---
+
+
+### 3.5 Creating a DOI for a GitHub repository
 
 Giving your code, data or research outputs a Digital Object Identifier (DOI) gives them a permanent place in the scholarly record and can be used in the (unlikely) event of any claims over discoveries. 
 
@@ -356,7 +370,7 @@ A data product can be an effective way to deliver impact from your project!
 
 ### 4.1 Data Product Examples from the CDRC
 
-Priority Places: https://priorityplaces.cdrc.ac.uk
+Carbon footprint calculator: https://carbonfootprintcalculator.cdrc.ac.uk/
 
 Nutrient Profile Model Calculator: https://npmcalculator.cdrc.ac.uk 
 
@@ -439,7 +453,7 @@ A good overview of code testing is available in [The Turing Way Community (2022)
 
 Free hosting of your webapp is available from a variety of services (e.g. [Python Anywhere](https://www.pythonanywhere.com/), [shinyapps.io](https://www.shinyapps.io/)).
 
-The CDRC has a cloud-based web-app hosting capability which can be made available for you to host your data products. This uses [Docker](https://www.docker.com/) and [GitHub Actions](https://github.com/features/actions) to automate deployments on code changes. 
+The CDRC has a cloud-based web-app hosting capability which can be made available for you to host your data products. This uses [Docker](https://www.docker.com/) and [GitHub Actions](https://github.com/features/actions) to automate deployments on code changes to a branch in your GitHub repo. 
 
 ---
 
@@ -462,10 +476,18 @@ https://apps.cdrc.ac.uk
 
 If you have an idea for a web-app that comes from your research then please get in touch at: p.baudains@leeds.ac.uk
 
+---
+
+## 7. Exercise
+
+1. Create a GitHub account if you don't already have one.
+2. Set up a template data science project directory and push it to GitHub.
+3. Clone my example notebook and fix it!
+
 
 ---
 
-## 7. References and further reading
+## 8. References and further reading
 
 [git - the simple guide](https://rogerdudler.github.io/git-guide/)
 
@@ -478,4 +500,3 @@ If you have an idea for a web-app that comes from your research then please get 
 The Turing Way Community. (2022). The Turing Way: A handbook for reproducible, ethical and collaborative research (1.0.2). Zenodo. https://doi.org/10.5281/zenodo.6909298
 
 Wilkinson, M., Dumontier, M., Aalbersberg, I. et al. The FAIR Guiding Principles for scientific data management and stewardship. Sci Data 3, 160018 (2016). https://doi.org/10.1038/sdata.2016.18
-
